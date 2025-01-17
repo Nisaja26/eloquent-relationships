@@ -49,7 +49,18 @@ class User extends Authenticatable
      */
     public function phone()
     {
-        // memeberi tahu laravel kita membuat relasi HasOne dari model User ke model Phone / phones
     	return $this->hasOne(Phone::class);
     }
+    
+    /**
+     * roles
+     *
+     * @return void
+     */
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class, 'user_role');
+    }
 }
+// menambahkan method roles dan didalamnya membuat relasi Belons To Mony ke dalam model role
+// dan di paramenter ke dua adalah nama tabe pivote-nya yaitu user_role
