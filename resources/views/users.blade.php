@@ -19,13 +19,21 @@
                             <th>Nama User</th>
                             <th>Nomor Telepon</th>
                         </tr>
+                        <tr>
+                            <th>Rizki Maulana</th>
+                            <th>085785852224</th>
+                        </tr> 
+                        <tr>
+                            <th>Yudi Purwanto</th>
+                            <th>089223918038</th>
+                        </tr>
                     </thead>
                     <!-- melakukan perulangan data users menggunakkan foreach  -->
                     <tbody>
                         @foreach($users as $user)
                         <tr>
                             <td>{{ $user->name }}</td>
-                            <!-- memanggil relasi phone di model -->
+                            <!-- memanggil relasi phone di model-->
                             <td>{{ $user->phone->phone }}</td>
                         </tr>
                         @endforeach
